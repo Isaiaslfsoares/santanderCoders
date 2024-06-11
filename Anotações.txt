@@ -1,0 +1,130 @@
+powershell no vscode é uma linha de comando do windows assim como o cmd.
+
+Versionamento de códigos: untracked -> unmodified -> modified -> staged
+
+Abre a pasta que quer transformar em repositório local: 
+comando: git init
+
+Olhar alterações: (Modified)
+comando: git status
+
+Adicionar novo arquivo modificado (Staged)
+comando git add .\(arquivo) ou git add .
+
+Mostrar as linhas modificadas: 
+comando: git diff
+
+Mostrar as modificações na area do Staged:
+comando: git diff --staged
+
+Salvar no repositório: 
+comando git commit -m "add a descrição de forma resumida"
+
+Ver histórico dos commits: 
+git log
+
+Descartar mudanças, remover mudanças de um arquivo: 
+git restore .\(nomeDoArquivo)
+
+Tirar da área de Staged e voltar para área de mudanças: 
+git restore --staged .(nomeDoArquivo)
+
+Como ver o que tem nos repositórios remotos: 
+git remote
+
+Enviando alterações feitas no código vscode para o repositório remoto
+git push origin main
+
+Trazendo novas alterações para nosso repositório local (merge local)
+git pull
+
+Comando para puxar as alterações mas verifica-las antes de dar o git push.
+git fetch   -> git diff origin/main
+
+Comando para sair do git 
+q
+
+criar nova branch (braco)
+git branch nomeDaBranchNova
+
+comando pra mostrar em qual branch estamos e os commits
+git log --oneline --decorate
+
+Como ir para a nova branch ou caminhar entre as branchs
+git checkout nomeDaBranchNova
+
+ver todas as branchs que existem
+git branch
+
+Unir branchs ou trazer arquivos que estão em outras branchs pra a atual
+git merge
+
+HTML
+
+tabelas: 
+<table> 
+<thead>
+<tr> linha
+<th><th/> itens cabeçalho
+<th><th/>
+<th><th/>
+<tr/>
+<thead/>
+
+<tbody>
+<tr> linha
+<td><td/> itens da linha da tabela (colunas)
+<td><td/>
+<td><td/>
+<tr/>
+<tbody/>
+<table/>
+
+mesclar células: 
+<td rowspan="x"> linhas
+<td colspan="x"> colunas
+
+FORMULARIOS
+<form> <form/> 
+input -> caixa de inserção no html
+label for="id do input"-> etiqueta para a caixa de inserção
+atributos:
+value -> já começa com um valor inserido inicialmente
+placeholder = texto de sugestão
+id -> nome exclusivo da tag
+class -> classe da tag
+name -> identificação do campo em particular ao enviar o formulário
+
+types: 
+"text" entrada de texto
+"passoword" senha, esconde o digitado
+"email" email
+"date" datas abre calendário
+"time" horário
+"checkbox" caixa de seleção aceita mais de uma opção 
+"file" upload de item
+"url" input para links
+"radio" seleção mas não aceita mais de uma nas opções
+"submit" botão de enviar 
+"color" seleção de cor
+"range" escala. value max e  min podem ser definidos
+"reset" limpa o formulário 
+"select" setinha com opções disabled selected vários atributos
+textarea espaço para digitação de mensagem, pode ser definido o tamanho
+
+action = ele não definido recarrega a página, quando definido é a forma de enviar os conteúdos do formulário
+method = get quando você obtem a página de outros lugares
+method = post para coisas que necessitam mais seguranças
+
+CSS tabela
+pseudoclasses na estilização
+table tr:first-child (primeira linha da tabela)
+table tr:nth-child (condição, normalmente 2n+1) condição de pular uma linha smp
+
+CSS 
+regra geral * { box-sizing: border-box;} evita o aumento das dimensões das box com o padding
+z-index é regra de prioridade sobre a visualização (como se fosse abas do photoshop).
+position: sticky; quando você quer que o item grude na tela na rodagem;
+display: flex; flex-wrap: wrap; flex: %; (configurações para estudar) 
+
+DISPLAY FLEX: 
