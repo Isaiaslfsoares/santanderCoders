@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: #808080;
+            margin: 0px;
+        }
+        header {
+            margin: 0px;
+            padding: 8px;
+            background-color: black;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: red;
+            font-family: 'Trebuchet MS';
+        }
+        input {
+            width: 200px;
+        }
+        button {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+    <main>
+        <p id="texto_exemplo">Seja bem vindo! <span id="meunome"></span>, faça seu login abaixo.</p>
+        <input type="text" id="inputEmail">
+        <input type="password">
+        <button type="submit" id="acessar">Acessar</button>
+    </main>
+    <footer>
+
+    </footer>
+    
+<script>
+    
+    const nome = prompt('Qual o seu nome?');
+    document.getElementById('meunome').innerText = nome;
+    
+    const botao = document.getElementById('acessar') //acessa o HTML e pega o valor pelo ID
+    botao.addEventListener('click', function(){ //addEventList ele visualiza o evento que ocorre e recebe dois parâmetros (o evento e uma função)
+        const inputEmail = document.getElementById('inputEmail').value; //aqui ele pega o valor pelo id
+        alert(inputEmail)
+        
+    })
+</script>
+</body>
+</html>

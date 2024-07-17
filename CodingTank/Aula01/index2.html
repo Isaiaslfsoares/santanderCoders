@@ -1,0 +1,27 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div>
+            <input type="text" id="novaAtividade" placeholder="Informe a nova atividade">
+            <button type="submit" id="botao">Adicionar</button>
+        </div>
+        <ul id="lista"></ul>
+        <script>
+            document.getElementById('botao').addEventListener('click', function(){
+                const inputAtividade = document.getElementById('novaAtividade');
+                
+                //possibilidade01
+                // const lista = document.getElementById('lista');
+                // lista.innerHTML = lista.innerHTML + '<li>' + inputAtividade.value + '</li>';
+
+                //possibilidade02
+                const novoItem = document.createElement("li"); //createElement cria uma nova tag no HTML que é demonstrada em "". 
+                novoItem.innerText = inputAtividade.value;
+                lista.append(novoItem); //adicina um novo item ao fim da lista
+                inputAtividade.value = ""; //limpa o campo após adicionar nova lista
+            })
+        </script>
+    </body>
+</html>

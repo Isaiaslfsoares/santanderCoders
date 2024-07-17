@@ -128,3 +128,37 @@ position: sticky; quando você quer que o item grude na tela na rodagem;
 display: flex; flex-wrap: wrap; flex: %; (configurações para estudar) 
 
 DISPLAY FLEX: 
+
+
+MATERIA DO CODING TANK
+
+Introdução a tecnologias web (HTML / CSS / Javascript)
+- Sintaxe e Estrutura Básica de um documento HTML
+- Adicionando Folhas de Estilo
+- Adicionando Scripts
+
+Sintaxe Básica da Linguagem
+- Declaração de Variáveis (var / let / const)
+- Execução de Instruções - alert() / prompt() / confirm() / document.write() / console.log()
+- Declarando sua Instrução (Função)
+- Tipos Primitivos
+- String / Number / Boolean / Null / Undefined
+- Tipos de Referência
+- Array / Object
+- Operadores
+- Atribuição / Aritméticos / Comparação / Lógicos
+- Estrutura Condicional
+- If / Else
+- Estruturas de Repetição
+- While / For
+
+CURSOS INDICADOS PELO PROF CARLOS HENRIQUE: 
+MAXIMILLIAN SCHWARZMULLER
+https://udemy.com/user/academind/
+Udemy - Prof Luiz Otavio Miranda 
+ROCKETSEAT - Cursos Gratuitos 
+Mayk Brito
+Leonardo Leitão
+Loiane.training https://loiane.training/
+https://www.frontendmentor.io/
+
