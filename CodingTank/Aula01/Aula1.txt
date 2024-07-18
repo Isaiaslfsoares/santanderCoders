@@ -1,6 +1,47 @@
+
+----------------------------             HTML                ----------------------------------- 
 HTML - Estrutura do site 
+html - head - body - main - footer - script - style
+tags 
+div
+input
+p
+body
+
+----------------------------        CSS - Estilização        ----------------------------------- 
+margin
+padding
+background-color
+display
+flex-direction
+align-items
+color
+font-family
+width
+height
 
 
-CSS - Estilização
+----------------------------            JavaScript           ----------------------------------- 
 
-JavaScript - 
+Variáveis - var, let e const 
+Tipos: string, number, boolean, array, objeto, 
+function 
+if, if else, < > = && || !
+
+Funções:
+isNaN() - Verifica se é um numero, booleano. 
+.push
+Math.random
+Math.floor 
+splice()
+
+DOM:
+.document.getElementById('idDoItem') Leva um elemento do HTML para o SCRIPT pelo ID do elemento.
+.addEventListener('click/evento', function(/parametro){/blocodecódigo}) - Observa um evento que ocorre no HTML e executa uma função quando ocorrer
+.document.createElement("tag"); Cria uma tag específica
+.innerText - altera ou leva o texto ao elemento selecionado.
+.innetHTML - mesma coisa, mas interpreta as tags de html
+.append() - adiciona um novo elemento ao fim da lista.
+.value - verifica o valor, usado quando o input é textual
+
+return; // encerra aplicação no if

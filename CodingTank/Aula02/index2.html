@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <style>
+            li {
+                margin-bottom: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Meus alunos</h1>
+        <div>
+            <input type="text" id="novoAluno" placeholder="Nome do aluno">
+            <button id="botao">Adicionar</button>
+        </div>
+        <ul id="alunos"></ul>
+
+
+        <script>
+
+
+            const arrayVazio = [];
+            const arrayNumero = [1, 2, 3, 4, 5];
+            const arrayString = ["Carlos", "Ximenes", "AdaTech"];
+            const arrayBooleans = [true, false, true, false, false];
+            const array = [1, "Carlos", true, new Date()];
+            
+            const alunos = ["Karolyne", "Jonathan", "Guilherme", "Gilvandir"];
+            const botao = document.getElementById('botao');
+            const lista = document.getElementById('alunos');
+            
+            //Possibilidade01
+            //Criar função de deletar
+            //Adicionar o evento ao botao => Casa! deletarAluno(i) deletarAluno([i]); onlclick ou eventListenner
+            document.getElementById('botao').addEventListener('click', function(){
+                adicionarAluno();
+            })
+
+            function exibirAlunos() {
+                lista.innerHTML = "";
+                for(let i = 0; i < alunos.length; i++){
+                    lista.innerHTML += `<li>${alunos[i]} <button>Deletar</button></li>`                    
+                }
+            }
+
+            function adicionarAluno() {
+                const novoAluno = document.getElementById('novoAluno').value;
+                alunos.push(novoAluno);
+                exibirAlunos();
+            }
+
+            function deletarAluno (index) {
+                if(index === -1) {
+                    alert('O aluno não existe')
+                    return
+                }
+                alunos.splice(index, 1);
+                exibirAlunos();
+            }
+            //Possibilidade02
+            // botao.addEventListener('click', function() {
+            //     const novoAluno = document.getElementById('novoAluno').value;
+            //     alunos.push(novoAluno); 
+            //     renderizarAluno(novoAluno);
+            // })
+
+            // function exibirAlunos(){
+                
+            //     for(let i = 0; i < alunos.length; i++){ 
+            //         renderizarAluno(alunos[i])
+            //     }
+            // }
+
+            // function renderizarAluno(novoAluno) {
+            //     const elementoLi = document.createElement("li");
+            //     elementoLi.innerText = novoAluno;
+            //     lista.append(elementoLi);
+            // }
+
+            exibirAlunos();
+        </script>
+    </body>
+
+</html>

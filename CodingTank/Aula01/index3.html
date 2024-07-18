@@ -1,0 +1,22 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="text" id="novatarefa" placeholder="Adicione uma nova tarefa">
+        <button type="submit" id="botao">Adicionar</button>
+        <div id="lista"></div>
+        <script>
+            const novatarefa = document.getElementById('novatarefa');
+            const botao = document.getElementById('botao');
+            const lista = document.getElementById('lista');
+            
+            botao.addEventListener('click', function (){
+                const novoItem = document.createElement("li");
+                novoItem.innerText = novatarefa.value;
+                lista.append(novoItem); 
+                novatarefa.value = "";
+            })
+        </script>
+    </body>
+</html>
