@@ -7,10 +7,11 @@
     <body>
         
         <script>
-            let numeroAleatorio = 5;
+            let numeroAleatorio = 0;
             //função para gerar o número aleatório
             function gerarNumeroAleatorio() {
-                numeroAleatorio = Math.floor(Math.random()*10);
+                numeroAleatorio = Math.floor(Math.random()*11);
+                // console.log(numeroAleatorio)
             }
             //verificar o numero do usuário
             function adivinharNumero() {
@@ -18,20 +19,20 @@
                 const numero = prompt('Me informe um número de 1 a 10');
 
                 if(isNaN(numero)){
-                    console.log('Valor inválido')
+                    alert('Valor inválido')
                 } else if ((numero < 1) || (numero > 10)){
-                    console.log('Número fora do intervalo permitido')
+                    alert('Número fora do intervalo permitido')
                 } else {
                     //comparar o resultado
                     let acertou = numero == numeroAleatorio;
                     if(acertou) {
-                        console.log("Acertou mizerávi")
+                        alert("Acertou mizerávi")
                     } else {
-                        console.log("Errrou!")
+                        alert("Errrou!")
                     }
                 }
             }
-
+            gerarNumeroAleatorio();
             adivinharNumero();
         </script>
     </body>

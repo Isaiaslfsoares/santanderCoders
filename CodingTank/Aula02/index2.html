@@ -26,8 +26,8 @@
             
             const alunos = ["Karolyne", "Jonathan", "Guilherme", "Gilvandir"];
             const botao = document.getElementById('botao');
-            const lista = document.getElementById('alunos');
-            
+            const lista = document.getElementById('alunos') //pega o id da lista ul 
+                        
             //Possibilidade01
             //Criar função de deletar
             //Adicionar o evento ao botao => Casa! deletarAluno(i) deletarAluno([i]); onlclick ou eventListenner
@@ -38,7 +38,7 @@
             function exibirAlunos() {
                 lista.innerHTML = "";
                 for(let i = 0; i < alunos.length; i++){
-                    lista.innerHTML += `<li>${alunos[i]} <button>Deletar</button></li>`                    
+                    lista.innerHTML += `<li>${alunos[i]} <button onclick="deletarAluno(${i})">Deletar</button></li>`                    
                 }
             }
 
@@ -48,14 +48,17 @@
                 exibirAlunos();
             }
 
-            function deletarAluno (index) {
-                if(index === -1) {
-                    alert('O aluno não existe')
-                    return
+            function deletarAluno(index) {
+                if(index == -1) {
+                    alert('O aluno não existe');
+                    return;
                 }
                 alunos.splice(index, 1);
                 exibirAlunos();
             }
+                
+            
+
             //Possibilidade02
             // botao.addEventListener('click', function() {
             //     const novoAluno = document.getElementById('novoAluno').value;
