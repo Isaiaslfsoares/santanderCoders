@@ -1,0 +1,110 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Melhor nota da turma 1063</h1>
+        <div id="resultado"></div>
+        <div id="resultado2"></div>
+        <script>
+            //Array de Objetos
+            const aluno = {
+                nome: "Isaias",
+                idade: 33,
+                turma: 1063,
+                nota: 10
+            }
+            const listaAlunos = [
+                    {
+                        nome: "Isaias",
+                        idade: 33,
+                        turma: 1063,
+                        nota: 6
+                    }, 
+                    {
+                        nome: "Anonio",
+                        idade: 20,
+                        turma: 1064,
+                        nota: 5
+                    }, 
+                    {
+                        nome: "Carlos",
+                        idade: 32,
+                        turma: 1063,
+                        nota: 7
+                    }, 
+                    {
+                        nome: "Renato",
+                        idade: 21,
+                        turma: 1064,
+                        nota: 1
+                    }, 
+                    {
+                        nome: "Luiza",
+                        idade: 25,
+                        turma: 1063,
+                        nota: 9
+                    }, 
+            ]          
+            //Qual aluno da maior nota da turma 1063?
+
+            //1 - Percorrer lista de alunos
+            let maiorNota = 0;
+            let alunoMaiorNota;
+            for(let i = 0; i < listaAlunos.length; i++){
+                if(listaAlunos[i].turma === 1063){
+                    if(listaAlunos[i].nota > maiorNota){
+                        maiorNota = listaAlunos[i].nota;
+                        alunoMaiorNota = listaAlunos[i].nome;
+                    }
+                }
+            }
+            
+            console.log(`O aluno ${alunoMaiorNota} tem a maior nota da turma 1063 que é ${maiorNota}.`)
+            const resultado = document.getElementById('resultado');
+            resultado.innerText = (`O aluno ${alunoMaiorNota} tem a maior nota da turma 1063 que é ${maiorNota}.`)
+
+            //2 - Procurar alunos da 1063
+            //3 - Comparar notas
+            //4 - Salvar a maior para exibir depois
+            //5 - Exibe o aluno com a maior nota        
+
+            //Qual o aluno mais velho? 
+
+            let maiorIdade = 0;
+            let nomeAlunoMaiorIdade = '';
+            let iteracao = 0;
+            
+            while(iteracao < listaAlunos.length){
+                const alunoAtual = listaAlunos[iteracao];
+                if(alunoAtual.idade > maiorIdade) {
+                    maiorIdade = alunoAtual.idade;
+                    nomeAlunoMaiorIdade = alunoAtual.nome
+                }
+                iteracao++;
+            }
+
+            console.log(`O aluno ${nomeAlunoMaiorIdade} é o mais velho com ${maiorIdade} idade`);
+            const mIdade = document.getElementById('resultado2');
+            mIdade.innerText = `O aluno ${nomeAlunoMaiorIdade} é o mais velho com ${maiorIdade} anos de idade`;
+
+           
+
+            // const cartela = [1, 2, 3, 4, 5, 6];
+
+            // while(cartela.length != 0){
+            //     const numeroAleatorio = Math.floor((Math.random()*10)+1);
+            //     console.log(numeroAleatorio)
+            //     const indexDoNumeroAleatorioNaCartela = cartela.indexOf(numeroAleatorio);
+            //     if(indexDoNumeroAleatorioNaCartela != -1){
+            //         cartela.splice(indexDoNumeroAleatorioNaCartela, 1);
+            //     }                
+            // }
+            // console.log('BINGO')
+
+
+            Exercício 6: 
+            setTimeout(function() {
+                console.log('Essa mensagem demorou 10s para carregar.')
+            }, 3000*i+1)
+        </script>
+    </body>
+</html>

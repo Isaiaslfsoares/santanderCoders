@@ -30,10 +30,15 @@ if, if else, < > = && || !
 
 Funções:
 isNaN() - Verifica se é um numero, booleano. 
-.push
-Math.random
-Math.floor 
-splice()
+.push() - insere o elemento novo como ultimo elemento do array
+Math.random() - cria um número aleatório entre 0 e 1. Math.floor((Math.random()*max-min)+mín)
+Math.floor() - arredonda o valor para baixo.
+splice() - retira e adiciona elementos em um array. recebe 3 parâmetros (indiceInicial, quantosCortes, add)
+parseInt() - transforma em inteiro retirando as casas decimais
+parseFloor() - transforma string em numero flutuante
+
+onclick('') recebe uma função como parâmetro que é executa ao ser clicado
+setTimeout
 
 DOM:
 .document.getElementById('idDoItem') Leva um elemento do HTML para o SCRIPT pelo ID do elemento.
@@ -41,7 +46,14 @@ DOM:
 .document.createElement("tag"); Cria uma tag específica
 .innerText - altera ou leva o texto ao elemento selecionado.
 .innetHTML - mesma coisa, mas interpreta as tags de html
-.append() - adiciona um novo elemento ao fim da lista.
+.append() - adiciona um novo elemento ao HTML **estudar**
 .value - verifica o valor, usado quando o input é textual
 
 return; // encerra aplicação no if
+
+1 - html CSS
+2 - criar função usando chamadas que já fizemos varias vezes
+3 - condicionais
+4 - loops e fors
+5 - loop e fors
+6 - cabulosa que veremos hj - setTimeout (funcao, tempo)
