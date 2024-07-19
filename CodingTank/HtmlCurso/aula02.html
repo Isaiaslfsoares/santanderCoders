@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <script>
+            let numeroAleatorio = 0;
+            function gerarNumeroAleatorio() {
+                numeroAleatorio = 3;
+                //ATIVIDADE DE CASA => FAZER O NUMERO ALEATORIO SER ALEATORIO. Ver Math.random();
+            }
+
+            function advinharNumero() {
+                const nome = prompt('Me informe seu nome');
+                const numero = prompt('Me informe um numero de 1 a 10');
+
+                if(isNaN(numero)) { // Valor informado não é um número.
+                    alert('Favor informar um número válido entre 1 e 10');
+                    return;
+                }
+
+                if(numero < 1 || numero > 10) { // Numero menor que 1, ou maior que 10.
+                    alert('Você informou um número fora do intervalo permitido');
+                    return;
+                }
+
+                if(numero != numeroAleatorio) { // Número diferente do aleatorio.
+                    alert('ERROOOOOOOU *NA VOZ DO FAUSTÃO*');
+                    return;
+                }
+
+                alert('Acertou miseravi');
+
+                // if(isNaN(numero)) {
+                //     // console.log('Favor informar um número válido entre 1 e 10');
+                //     alert('Favor informar um número válido entre 1 e 10');
+                // } else if(numero < 1 || numero > 10) { // Numero menor que 1, ou maior que 10.
+                //     // console.log('Você informou um número fora do intervalo permitido');
+                //     alert('Você informou um número fora do intervalo permitido');
+                // } else if(numero == numeroAleatorio) {
+                //         // console.log('Acertou miseravi');
+                //         alert('Acertou miseravi');
+                // } else {
+                //         // console.log('ERROOOOOOOU *NA VOZ DO FAUSTÃO*');
+                //         alert('ERROOOOOOOU *NA VOZ DO FAUSTÃO*');
+                // }
+            }
+
+            gerarNumeroAleatorio();
+            advinharNumero();
+        </script>
+    </body>
+</html>

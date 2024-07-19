@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <style>
+            li {
+                margin-bottom: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Meus Alunos</h1>
+        <div>
+            <input id="nome-aluno" type="text" placeholder="Nome do Aluno" />
+            <button id="adicionar-aluno">Adicionar</button>
+        </div>
+        <ul id="alunos">
+            <span>Nenhum aluno cadastrado</span>
+        </ul>
+        <script>
+            //Exemplos de Array
+            const arrayVazio = [];
+            const arrayNumero = [1, 2, 3, 4, 5];
+            const arrayStrings = ["Carlos", "Ximenes", "AdaTech"];
+            const arrayBooleans = [true, false, true, false, false];
+            const array = [1, "Carlos", true, new Date()];
+
+            //Lista de Alunos
+            const listaAlunos = ["Karolyne", "Jonathan", "Guilherme", "Gilvandir"];
+
+            // Indo ao HTML e buscando minha tag UL com id #alunos
+            const elementoUl = document.getElementById('alunos');
+
+            function exibirAlunos() {
+                elementoUl.innerHTML = ""; // Apaga todo o HTML dentro do <ul>
+                for(let iteracao = 0; iteracao < listaAlunos.length; iteracao++) {
+                    // debugger; => Opção para debugar no navegador
+                    const elementoLi = document.createElement("li"); // <li></li>
+                    elementoLi.innerText = listaAlunos[iteracao]; // <li>Karolyne</li>
+                    elementoUl.append(elementoLi); // <ul><li>Karolyne</li></ul>
+
+                    // Criar botão para remover Aluno
+                    const elementoBotao = document.createElement("button"); // <button></button>
+                    elementoBotao.innerText = 'Remover'; // <button>Remover</button>
+                    elementoBotao.addEventListener("click", function () {
+                        deletarAluno(iteracao);
+                    }) // Criar ação de remover aluno pelo index I ao clicar no botão
+                    elementoLi.append(elementoBotao); // <li>Karolyne<button>Remover</button></li>
+
+                    setTimeout(function () {
+                        console.log(listaAlunos[iteracao]);
+                    }, 3000*iteracao);
+                }
+            }
+
+            // Adicionar alunos
+            function adicionarAluno() {
+                const elementoInput = document.getElementById('nome-aluno');
+                const nomeAluno = elementoInput.value; // Pega valor do input
+                listaAlunos.push(nomeAluno); // Adicionar o novo aluno na lista
+                exibirAlunos(); // Renderiza a lista de alunos na tela
+            }
+
+            // Ação que será executada quando o usuário clicar no botão
+            document.getElementById('adicionar-aluno').addEventListener("click", function() {
+                adicionarAluno();
+            })
+
+            // Deletar aluno a partir do seu index
+            function deletarAluno(indice) {
+                if(indice < 0) { // Sai caso o index não exista
+                    return;
+                }
+                listaAlunos.splice(indice, 1); // Remove 1 elemento a partir do INDEX.
+                exibirAlunos();  // Renderiza a lista de alunos na tela.
+            }
+
+
+            // Possibilidade #01
+            // function exibirAlunos() {
+            //     lista.innerHTML = "";
+            //     for(let i = 0; i < alunos.length; i++) {
+            //         lista.innerHTML += `<li>${alunos[i]} <button onclick=${deletarAluno(i)}>Deletar</button></li>`;
+            //         // Criar função de deletar
+            //         // Adicionar o evento ao botão => CASA! deletarAluno(i) onclick, eventListener
+            //     }
+            // }
+
+            // function adicionarAluno() {
+            //     const nomeAluno = document.getElementById('nome-aluno').value;
+            //     alunos.push(nomeAluno);
+            //     exibirAlunos();
+            // }
+
+            exibirAlunos();
+        </script>
+    </body>
+</html>

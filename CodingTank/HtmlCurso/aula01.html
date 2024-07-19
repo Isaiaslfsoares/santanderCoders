@@ -1,0 +1,29 @@
+<html>
+    <head></head>
+    <body>
+        <div>
+            <input id="input_atividade" type="text" placeholder="Informe a atividade" />
+            <button id="botao_adicionar">Adicionar</button>
+        </div>
+        <ul id="lista_atividades">
+            <li>Item exemplo 1</li>
+        </ul>
+    </body>
+    <script>
+        document.getElementById("botao_adicionar").addEventListener("click", function() {
+            const inputAtividade = document.getElementById("input_atividade");
+            
+            const listaAtividades = document.getElementById("lista_atividades");
+            //Possibilidade #01
+            // listaAtividades.innerHTML = listaAtividades.innerHTML + '<li>' + inputAtividade.value + '</li>';
+            // listaAtividades.innerHTML += '<li>' + inputAtividade.value + '</li>';
+
+            //Possibilidade #02
+            const novoItem = document.createElement("li"); //<li></li>
+            novoItem.innerText = inputAtividade.value; //<li>Atividade</li>
+            listaAtividades.append(novoItem); //<ul><li>Atividade</li></ul>
+
+            inputAtividade.value = "";
+        });
+    </script>
+</html>

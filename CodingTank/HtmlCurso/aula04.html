@@ -1,0 +1,81 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            //Exemplos de Array
+            const arrayVazio = [];
+            const arrayNumero = [1, 2, 3, 4, 5];
+            const arrayStrings = ["Carlos", "Ximenes", "AdaTech"];
+            const arrayBooleans = [true, false, true, false, false];
+            const array = [1, "Carlos", true, new Date()];
+
+            //Array de Objetos
+            const listaAlunos = [
+                { nome: "Carlos", idade: 32, turma: 1063, nota: 9 },
+                { nome: "Pedro", idade: 31, turma: 1064, nota: 5 },
+                { nome: "Antonio", idade: 24, turma: 1063, nota: 6 },
+                { nome: "Leticia", idade: 18, turma: 1064, nota: 8 },
+                { nome: "Marcos", idade: 35, turma: 1063, nota: 3 },
+                { nome: "Juliana", idade: 36, turma: 1063, nota: 10 }
+            ]
+
+            //Qual aluno com a maior nota da turma 1063?
+
+            // 1 - Percorrer lista de alunos
+            let maiorNota = 0; // Variavel para a maior nota
+            let alunoMaiorNota = ''; // Variavel para nome do aluno com maior nota
+            for(let iteracao = 0; iteracao < listaAlunos.length; iteracao++) {
+                // 2 - Procurar aluno da 1063
+                const alunoAtual = listaAlunos[iteracao];
+                if(alunoAtual.turma === 1063) {
+                    // 3 - Comparar as notas
+                    if(alunoAtual.nota > maiorNota) {
+                        // 4 - Salva a maior para exibir depois
+                        maiorNota = alunoAtual.nota;
+                        alunoMaiorNota = alunoAtual.nome;
+                    }
+                }
+            }
+            // 5 - Exibe o aluno com a maior nota
+            console.log(`O aluno ${alunoMaiorNota} tem a maior nota da turma 1063, que é: ${maiorNota}`); //9
+
+            // Qual o aluno mais velho?
+            let maiorIdade = 0;
+            let nomeAlunoMaiorIdade = '';
+            let iteracao = 0;
+
+            while(iteracao < listaAlunos.length) {
+                const alunoAtual = listaAlunos[iteracao];
+                if(alunoAtual.idade > maiorIdade) {
+                    maiorIdade = alunoAtual.idade;
+                    nomeAlunoMaiorIdade = alunoAtual.nome;
+                }
+                iteracao++;
+            }
+
+            // const numeroAleatorio = Math.floor((Math.random() * 10) + 1); //8
+            // let numeroUsuario; // 0
+            // while(numeroUsuario != numeroAleatorio) {
+            //     numeroUsuario = prompt('Informe um numero de 1 a 10');
+            // }
+
+            // const cartela = [1, 2, 3];
+            // while(cartela.length !== 0) {
+            //     const numeroAleatorio = Math.floor((Math.random() * 10) + 1);
+            //     console.log(numeroAleatorio);
+            //     const indexDoNumeroAleatorioNaCartela = cartela.indexOf(numeroAleatorio);
+            //     //se for > 0 existe
+            //     //se for -1 não existe
+            //     if(indexDoNumeroAleatorioNaCartela !== -1) {
+            //         cartela.splice(indexDoNumeroAleatorioNaCartela, 1);
+            //     }
+            // }
+            // console.log('Voce Ganhou!');
+
+            setTimeout(function () {
+                console.log('Essa mensagem demorou 10 segundos para carregar')
+            }, 10000);
+
+        </script>
+    </body>
+</html>
