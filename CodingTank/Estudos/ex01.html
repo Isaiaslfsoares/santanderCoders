@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;  
+                background-color: #808080;                              
+            }
+            header {
+                background-color: black;
+                color: red;
+                padding: 10px;
+            }
+            main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;                
+            }
+            input, button {
+                width: 200px;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Fazer uma página que pergunte o nome primeiro e receba como input email e senha que retorna mensagem de sucesso com os dados. -->
+        <header>
+            <h1>Login</h1>
+        </header>
+        <main>
+            <p>Seja bem vindo <span id="nomeUsuario"></span>! Faça seu login abaixo:</p>
+           
+            Email:<input type="email" id="email">
+            Senha:<input type="password" id="senha">        
+            <button type="submit" id="botao">Acessar</button>
+        </main>
+        <footer>
+
+        </footer>
+        <script>
+            //Receber o nome e colocá-lo no span
+            const nome = prompt('Insira seu nome:');
+            const inputNome = document.getElementById('nomeUsuario');
+            inputNome.innerText = nome; 
+            //Trazer variáveis do botão, email e senha.
+            const botao = document.getElementById('botao');
+            
+            botao.addEventListener('click', function() {
+                const email = document.getElementById('email').value;
+                const senha = document.getElementById('senha').value;
+                alert(`Parabéns ${nome}!\nSeu email: ${email} foi cadastrado com sucesso. \nAnote sua senha: '${senha}' para não esquecer.`)
+            })
+
+        </script>
+    </body>
+</html>

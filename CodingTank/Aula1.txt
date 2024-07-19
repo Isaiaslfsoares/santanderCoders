@@ -37,7 +37,7 @@ splice() - retira e adiciona elementos em um array. recebe 3 parâmetros (indice
 parseInt() - transforma em inteiro retirando as casas decimais
 parseFloor() - transforma string em numero flutuante
 
-onclick('') recebe uma função como parâmetro que é executa ao ser clicado
+onclick=" " recebe uma função como parâmetro que é executa ao ser clicado
 setTimeout
 
 DOM:

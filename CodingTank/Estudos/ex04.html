@@ -1,0 +1,45 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Lista de Alunos:</h1>
+        <div>
+            <input type="text" id="novoAluno" placeholder="Insira o nome do aluno">
+            <button type="submit" id="botaoAdicionar">Adicionar</button>
+        </div>
+        <ul id="listaAlunos">Nenhum aluno cadastrado</ul>
+
+        <script>
+            const arrayDeAlunos = [];
+            const listaAlunos = document.getElementById('listaAlunos');
+            const botao = document.getElementById('botaoAdicionar');
+            
+        function adicionarAluno(){
+            const inputNovoAluno = document.getElementById('novoAluno').value;
+            arrayDeAlunos.push(inputNovoAluno);
+            exibirAluno();
+        }
+            
+        botao.addEventListener('click', function(){
+            adicionarAluno();
+            document.getElementById('novoAluno').value = ""
+        });
+            
+        function exibirAluno(){
+            listaAlunos.innerHTML = "";
+            for(let i = 0; i < arrayDeAlunos.length; i++){
+                
+                listaAlunos.innerHTML += `<li>${arrayDeAlunos[i]} <button onclick="deletarAluno(${i})">Remover</button></li>`;
+            }
+        }
+
+        function deletarAluno(index) {
+            if(index === -1){
+                return alert('Aluno inexistente.');
+            } 
+            arrayDeAlunos.splice(index, 1);
+            exibirAluno();
+        }
+        exibirAluno();
+        </script>
+    </body>
+</html>

@@ -88,20 +88,20 @@
 
            
 
-            // const cartela = [1, 2, 3, 4, 5, 6];
+            const cartela = [1, 2, 3, 4, 5, 6];
 
-            // while(cartela.length != 0){
-            //     const numeroAleatorio = Math.floor((Math.random()*10)+1);
-            //     console.log(numeroAleatorio)
-            //     const indexDoNumeroAleatorioNaCartela = cartela.indexOf(numeroAleatorio);
-            //     if(indexDoNumeroAleatorioNaCartela != -1){
-            //         cartela.splice(indexDoNumeroAleatorioNaCartela, 1);
-            //     }                
-            // }
-            // console.log('BINGO')
+            while(cartela.length != 0){
+                const numeroAleatorio = Math.floor((Math.random()*10)+1);
+                console.log(numeroAleatorio)
+                const indexDoNumeroAleatorioNaCartela = cartela.indexOf(numeroAleatorio);
+                if(indexDoNumeroAleatorioNaCartela != -1){
+                    cartela.splice(indexDoNumeroAleatorioNaCartela, 1);
+                }                
+            }
+            console.log('BINGO')
 
 
-            Exercício 6: 
+            //Exercício 6: 
             setTimeout(function() {
                 console.log('Essa mensagem demorou 10s para carregar.')
             }, 3000*i+1)

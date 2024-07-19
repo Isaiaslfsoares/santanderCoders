@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style></style>
+    </head>
+    <body>
+        <input type="text" id="novaTarefa" placeholder="Informe a nova tarefa">
+        <button type="submit" id="botao">Adicionar</button>
+        <ul id="lista"></ul>
+        <script>
+            //FORMA 2.
+            const botao = document.getElementById('botao'); //chama botao do html
+            
+            botao.addEventListener('click', function(){   //add evento ao botao
+                const inputNovaTarefa= document.getElementById('novaTarefa'); //chama input da nova tarefa do html
+                const lista = document.getElementById('lista'); // chama local da lista de tarefas
+                const novaTarefa = document.createElement('li'); // cria uma nova tag li em uma constante
+                novaTarefa.innerText = inputNovaTarefa.value; //a constante com a tag li recebe o texto do input da nova tarefa
+                lista.append(novaTarefa); //a nova tarefa agora com o texto e o input é adicionado a lista do html
+                inputNovaTarefa.value = "";  //limpa o input
+            })
+        </script>
+
+
+        <!-- <script>
+            FORMA 1.
+            const botao = document.getElementById('botao'); //pega o botao do html
+            
+            botao.addEventListener('click', function(){
+            const inputNovaTarefa = document.getElementById('novaTarefa'); //pega o input da nova tarefa do html
+            const lista = document.getElementById('lista'); //pega o local da lista do html
+
+            lista.innerHTML += `<li>${inputNovaTarefa.value}</li>`;
+            inputNovaTarefa.value = "";                
+            })
+        </script> -->
+    </body>
+</html>
