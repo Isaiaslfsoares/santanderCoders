@@ -1,0 +1,58 @@
+<!-- Pedro é da turma A e tem 14 anos, 
+     Maria é da turma A e tem 12 anos, 
+     Marcos é da turma B e tem 15 anos, 
+     Michel é da turma A e tem 13 anos, 
+     Ana é da turma B e tem 11 anos, 
+     Bruno é da turma B e tem 10 anos. 
+     
+Baseado nesses objetos desenvolva as seguintes funções: (2 pontos)
+
+Uma função que me retorne o nome e idade do aluno mais velho da turma A
+Uma função que me retorne a média de idade de todos os alunos. -->
+
+<html>
+    <head></head>
+    <body>
+        <script>
+
+            const criancadaToda = [
+                                        {nome: "Pedro", turma: "A", idade: 14},
+                                        {nome: "Maria", turma: "A", idade: 12},
+                                        {nome: "Marcos", turma: "B", idade: 15},
+                                        {nome: "Michel", turma: "A", idade: 13},
+                                        {nome: "Ana", turma: "B", idade: 11},
+                                        {nome: "Bruno", turma: "B", idade: 10}
+                                    ]
+
+            function maisVelhoTurmaA() {
+                let idadeMaisVelho = 0;
+                let nomeMaisVelho = "";
+                
+                for(let i = 0; i < criancadaToda.length; i++){
+
+                    if(criancadaToda[i].turma === "A") {
+                        if(criancadaToda[i].idade > idadeMaisVelho){
+                            idadeMaisVelho = criancadaToda[i].idade;
+                            nomeMaisVelho = criancadaToda[i].nome;
+                        }
+                    }
+                }
+
+                return console.log(`O aluno mais velho da turma A é ${nomeMaisVelho} com a idade de ${idadeMaisVelho} anos`);
+            }
+
+            function mediaIdadeTodos() {
+                let somaIdade = 0;
+                let mediaIdade = 0;
+                for(let i = 0; i < criancadaToda.length; i++){
+                    somaIdade += criancadaToda[i].idade
+                }
+                mediaIdade = somaIdade/(criancadaToda.length)
+                return console.log(`A média de idade de ambas as turmas é de ${mediaIdade}`);
+            }
+            
+            maisVelhoTurmaA();
+            mediaIdadeTodos();
+        </script>
+    </body>
+</html>

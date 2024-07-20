@@ -1,0 +1,50 @@
+<!-- 2 - Agora desenvolva para adicionar a página HTML da questão anterior o seguinte: (1,5 pontos)
+
+Uma ***função*** chamada *"boasVindas"* que será executada assim que carrega a página.
+Essa função vai abrir um **prompt** com o campo "Por favor digite seu nome:"
+Após digitar e sair do prompt tem que aparecer um alerta de boas vindas com o texto "Seja bem-vindo" e o nome digitado no prompt anterior. -->
+
+
+<html>
+    <head>
+        <style>
+            body {
+                font-family: 'Trebuchet MS';
+            }
+            h1 {
+                color: red;
+                font-size: 24px;
+            }
+            p {
+                font-size: 14px;
+            }
+            h2 {
+                color: #801515;
+                font-size: 16px;
+            }
+            li {
+                color: grey;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1>Coding Tank Santander Coders</h1>
+        <p>Sejam bem-vindos a esse desafio. Essa é a fase final e todos nós desejamos que você tenha uma boa prova.</p>
+        <h2>Dicas para uma boa prova:</h2>
+        <ul>
+            <li>Tenha tranquilidade</li>
+            <li>Faça um código simples e autêntico</li>
+            <li>Revise suas respostas</li>
+            <li>Tenha atenção aos detalhes</li>            
+        </ul>
+        <script>
+            function boasVindas() {
+                const nome = prompt('Por favor digite seu nome:');
+                alert(`Seja bem vindo ${nome}!`);
+            }
+            boasVindas();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!-- 5 - Em um bingo eu tenho uma cartela com os números 11, 28, 35, 74, 26 e 17. (2 pontos) 
+ Desenvolva uma ***função*** que sorteie números aleatórios entre 1 e 75 até serem sorteados todos os números da cartela. 
+ Após sortear toda a cartela exibe no console a frase "Parabéns, você ganhou!" -->
+
+ <html>
+    <head>
+
+    </head>
+    <body>
+        
+        <script>
+
+        function sortearNumerosAleatorios() {
+
+            const cartela = [11, 28, 35, 74, 26, 17];
+            let intervaloDeNumerosAseremSorteados = [];
+
+            
+            for (let i = 1; i < 76; i++) {
+                intervaloDeNumerosAseremSorteados.push(i);
+            }
+
+            
+            while (cartela.length !== 0) {
+                const indexDoNumeroAleatorio = Math.floor(Math.random()*75)+1;
+                const numeroSorteado = intervaloDeNumerosAseremSorteados.splice(indexDoNumeroAleatorio, 1)[0];
+
+                const indexDoNumeroSorteado = cartela.indexOf(numeroSorteado);
+                if (indexDoNumeroSorteado !== -1) {
+                    cartela.splice(indexDoNumeroSorteado, 1);
+                }
+            }
+
+            console.log("Parabéns, você ganhou!");
+        }
+
+        sortearNumerosAleatorios();
+        </script>            
+    </body>
+ </html>

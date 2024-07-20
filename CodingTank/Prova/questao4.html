@@ -1,0 +1,23 @@
+<!-- 4 - Desenvolva uma **função** que escreva no console de 1 a 100 e a cada 5 números escreva a palavra Ada. (1,5 pontos) -->
+
+<html>
+    <head></head>
+    <body>
+        <script>
+            function escreverNumeros(){
+                let numero = 1;
+                for(let i = 0; i < 100; i++){
+                    if(numero%5===0){
+                        console.log(numero)
+                        console.log(`Ada`)
+                        numero++;
+                    } else {
+                    console.log(numero)
+                    numero++
+                    }
+                }
+            }
+            escreverNumeros();
+        </script>
+    </body>
+</html>
