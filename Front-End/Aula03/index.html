@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes Top 100</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Cadastro para receber Filme Grátis</h1>
+    </main>
+    <!-- Por padrão o action é / (do http) e method é GET -->
+    <form action="" method=""> 
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf">
+
+        <label for="numeroCartao">Número do Cartão:</label>
+        <input type="text" name="numeroCartao" id="numeroCartao">
+        <textarea name="" id="" ></textarea>
+
+        <button id="btn" type="button" onclick="logar()">Receber Filme</button>
+        <!-- para o botão validar o required no formulário a gente precisa deixar o button como submit -->
+    </form>
+    <script>
+        function logar(){
+            const nome = document.getElementById('nome');
+            console.log("Nome: ", nome.value)
+            console.log("Funcionou! form não requisitou a API.")
+        }
+
+    </script>
+</body>
+</html>
