@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Filmes Top 100</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Cadastro para receber Filme Grátis</h1>
+    </main>
+    <form  id="formulario" action=""  method="GET" onsubmit="logar(event)">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nomeComple" >
+
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf-usuario"  >
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" >
+
+        <label for="numeroCartao">Número Cartão:</label>
+        <input type="text" id="numeroCartao" name="cartao" >
+
+        <button id="submit" type="submit">Receber Filme </button>
+    </form>
+    <section>
+        <h1>Dados do Cliente: </h1>
+        <div>
+            <label for="">Nome: </label>
+            <p id="nomeCliente"></p>        
+        </div>
+        <div>
+            <label for="">CPF: </label>
+            <p id="cpfCliente"></p>        
+        </div>
+        <div>
+            <label for="">Email: </label>
+            <p id="emailCliente"></p>        
+        </div>
+        <div>
+            <label for="">Número do Cartão: </label>
+            <p id="cartaoCliente"></p>        
+        </div>
+    </section>
+
+
+</body>
+
+<script>
+    function logar(event){
+        console.log("evento recebido: ", event)
+        event.preventDefault();
+
+        const nome = document.getElementById("nome")
+        const email = document.getElementById("email")
+        const cpf = document.getElementById("cpf")
+        const cartao = document.getElementById("numeroCartao")
+
+        console.log("Nome:", nome.value)
+        console.log("CPF:", cpf.value)
+        console.log("email:", email.value)
+        console.log("cartão:", cartao.value)
+
+        console.log("funcionou! form não requisitou a API.")
+
+        const usuario = { 
+            nomeCompleto: nome.value,
+            cpfObtido : cpf.value,
+            emailObtido: email.value,
+            cartaoObtido: cartao.value
+        }
+
+        localStorage.setItem("usuario", JSON.stringify(usuario))
+        const usuarioObtido = localStorage.getItem("usuario")  //transforma a string do LocalStorage em objeto
+
+        console.log("usuarioObtido", JSON.parse(usuarioObtido))
+
+        mostrarDadosUsuario();
+
+        /* 
+          Lista 
+          [
+           
+               <input type="text" id="cpf" name="cpf-usuario" > 0 
+                <input type="text" id="cpf" name="cpf-usuario" > 1 
+               
+           ].value = undefined
+
+
+           obter o primeiro elemento da lista
+
+                  [0] =   <input type="text" id="cpf" name="cpf-usuario" >.value
+
+                  lista[0].value
+         */
+
+           /* 
+          Elemento em si 
+               <input type="text" id="cpf" name="cpf-usuario" >.value
+         */
+    }
+
+    function mostrarDadosUsuario(){
+        const dadosUsuarioString = localStorage.getItem('usuario')
+        const dadosUsuario = JSON.parse(dadosUsuarioString)
+
+        const elementoPNome = document.getElementById('nomeCliente');
+        const elementoPcpf = document.getElementById('cpfCliente');
+        const elementoPemail = document.getElementById('emailCliente');
+        const elementoPcartao = document.getElementById('cartaoCliente');
+
+        elementoPNome.innerHTML = dadosUsuario.nomeCompleto;
+        elementoPcpf.innerHTML = dadosUsuario.cpfObtido;
+        elementoPemail.innerHTML = dadosUsuario.emailObtido;
+        elementoPcartao.innerHTML = dadosUsuario.cartaoObtido;
+    }
+</script>
+
+</html>
