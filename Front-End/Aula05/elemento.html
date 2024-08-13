@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<form>
+    <select name="car">
+        <option value="volvo">Volvo</option>
+        <option value="saab" selected>Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+
+    <fieldset>
+        <legend>Informações Pessoais</legend>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name">
+        <label for="age">Idade:</label>
+        <input type="number" id="age" name="age">
+    </fieldset>
+
+    <fieldset>
+        <legend>Informações de Contato</legend>
+        <label for="phone">Telefone:</label>
+        <input type="tel" id="phone" name="phone">
+    </fieldset>
+
+    <label for="browser">Escolha um navegador:</label>
+    <input list="browsers" id="browser" name="browser">
+    <datalist id="browsers">
+        <option value="Chrome">
+        <option value="Firefox">
+        <option value="Safari">
+        <option value="Edge">
+    </datalist>
+
+    <input type="text" name="username" placeholder="Digite seu nome">
+    <input type="password" name="password" placeholder="Digite sua senha">
+
+    <label for="message">Mensagem:</label>
+    <textarea id="message" resize="false" name="message" rows="4" cols="50"></textarea>
+
+    <button type="submit">Enviar</button>
+    <button type="reset">Limpar</button>
+</form>
+
+</html>

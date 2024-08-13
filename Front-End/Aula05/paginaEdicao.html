@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edição usuário</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Edição usuário</h1>
+    </main>
+    <section> 
+     <h1> Dados do Cliente : </h1>
+     
+     <div>
+         <label> Nome: </label>
+         <p id="nomeCliente"> </p>
+     </div>
+     <div>
+        <label> CPF: </label>
+        <p id="cpfCliente"> </p>
+    </div>
+    <div>
+        <label> Email: </label>
+        <p id="emailCliente"> </p>
+    </div>
+    <div>
+        <label> Numero Cartão: </label>
+        <p id="cartaoCliente"> </p>
+    </div>
+    </section>
+
+
+</body>
+
+<script>
+    mostrarDadosUsuario()
+
+    function mostrarDadosUsuario() {
+        const dadosUsuarioString = localStorage.getItem("dadosUsuario")
+
+
+        const dadosUsuario = JSON.parse(dadosUsuarioString)
+
+        const elementoPNome = document.getElementById("nomeCliente")
+        const elementoPcpf = document.getElementById("cpfCliente")
+        const elementoPemail = document.getElementById("emailCliente")
+        const elementoPcartao = document.getElementById("cartaoCliente")
+
+
+        elementoPNome.innerHTML = dadosUsuario.nomeCompleto
+        elementoPcpf.innerHTML = dadosUsuario.cpfObtido
+        elementoPemail.innerHTML = dadosUsuario.emailObtido
+        elementoPcartao.innerHTML = dadosUsuario.cartaoObtido
+    }
+</script>
+
+</html>
+

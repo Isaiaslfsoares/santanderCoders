@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Position</title>
+
+        <style>
+
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            main {
+                position: absolute;
+                top: 30px;
+                left: 0px;
+                z-index: 0;
+                background-color: red;
+                width: 100vw;
+                height: 100vh;
+            }
+
+            article {
+                position: absolute;
+                z-index: 999;
+                top: 0px;
+                left: 40px;
+                width: calc(100% - 40px);
+                background-color: blueviolet;
+            }
+
+            nav {
+                position: fixed;
+                top: 0px;
+                right: 0px;
+                z-index: 2;
+                background-color: aqua;
+                width: 100%;
+                height: 60px;
+            }
+
+            footer {
+                position: static;
+                top: 20px;
+                left: 40px;
+                background-color: green;
+                width: 100%;
+                height: 50px;
+
+            }
+        </style>
+    </head>
+    <body>
+        
+        <nav>
+            Menu
+        </nav>
+        
+        <main>
+            <article>
+                <h1> Titulo Noticia</h1>
+            </article>
+
+        </main>
+
+        <footer>
+            Rodapé
+        </footer>
+    </body>
+</html>
