@@ -1,0 +1,8 @@
+body {
+    background: rgba(0, 81, 255, 0.24);
+}
+.h1 { 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(48, 92, 236);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.185);
+}

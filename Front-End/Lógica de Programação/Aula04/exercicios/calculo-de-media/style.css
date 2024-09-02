@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica', sans-serif;
+}
+
+main {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+h1, h2 {
+  margin: 1rem 0;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+  font-size: .75em;
+}
+
+input[type="text"] {
+  height: 2rem;
+  padding: .5rem;
+}
+
+button {
+ padding: .5rem 2rem; 
+}
+
+hr {
+  margin: 1rem 0;
+}
+
+
+/* Estilo para a mensagem de erro */
+#mensagemErro {
+  color: red;
+  font-weight: bold;
+}
+
+/* Estilo para o texto da média */
+#media {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+/* Estilo para o resultado da situação */
+#resultadoTexto {
+  font-size: 1.5em;
+  margin-top: 10px;
+  font-weight: bold;
+}

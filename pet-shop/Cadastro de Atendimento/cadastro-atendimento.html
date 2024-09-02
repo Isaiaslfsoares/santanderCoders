@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Atendimento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Pet Shop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Cadastro de Cachorro/cadastrar-cachorro.html">Cadastro e Edição de
+                            Cachorros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Cadastro de Atendimento/cadastro-atendimento.html">Cadastro de
+                            Atendimento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Listagem de Cachorros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Listagem de Atendimentos/listagemAtendimento.html">Listagem de
+                            Atendimentos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+        <div class="text-center mb-3">
+            <h1>Cadastrar Atendimento</h1>
+        </div>
+
+        <form id="atendimentoForm">
+            <div class="form-floating mb-3">
+                <select class="form-select" id="selectCachorro" required>
+                    <option value="" selected disabled>Selecionar Cachorro</option>
+                </select>
+                <label for="selectCachorro">Escolha um cachorro</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="datetime-local" class="form-control" id="horarioAtendimento" required>
+                <label for="horarioAtendimento">Horário de Atendimento</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <select class="form-select" id="tipoServico" required>
+                    <option value="" selected disabled>Tipo de Serviço</option>
+                    <option value="Banho">Banho</option>
+                    <option value="Tosa">Tosa</option>
+                    <option value="Tosa Higiênica">Tosa Higiênica</option>
+                    <option value="Corte de Unha">Corte de Unha</option>
+                </select>
+                <label for="tipoServico">Escolha o serviço</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <select class="form-select" id="funcionarioResponsavel" required>
+                    <option value="" selected disabled>Funcionário Responsável</option>
+                    <option value="Isabel">Isabel</option>
+                    <option value="João">João</option>
+                    <option value="Lidovaldo">Lidovaldo</option>
+                    <option value="Leonardo">Leonardo</option>
+                </select>
+                <label for="funcionarioResponsavel">Escolha o funcionário</label>
+            </div>
+
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="atendimentoConcluido">
+                <label class="form-check-label" for="atendimentoConcluido">Atendimento Concluído</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="valorServico" step="0.01" required>
+                <label for="valorServico">Valor do Serviço</label>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Cadastrar Atendimento</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="api-v2.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectCachorro = document.getElementById('selectCachorro');
+            const form = document.getElementById('atendimentoForm');
+
+            function carregarCachorros() {
+                const cachorros = buscarPets();
+                cachorros.forEach(cachorro => {
+                    const option = document.createElement('option');
+                    option.value = cachorro.id;
+                    option.textContent = `${cachorro.dogName} (${cachorro.dogBreed})`;
+                    selectCachorro.appendChild(option);
+                });
+            }
+
+            carregarCachorros();
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const atendimento = {
+                    cachorroId: selectCachorro.value,
+                    horario: document.getElementById('horarioAtendimento').value,
+                    tipoServico: document.getElementById('tipoServico').value,
+                    funcionario: document.getElementById('funcionarioResponsavel').value,
+                    concluido: document.getElementById('atendimentoConcluido').checked,
+                    valor: parseFloat(document.getElementById('valorServico').value)
+                };
+
+                salvarAtendimento(atendimento);
+                alert('Atendimento cadastrado com sucesso!');
+                form.reset();
+            });
+        });
+    </script>
+</body>
+
+</html>
